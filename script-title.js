@@ -61,14 +61,26 @@ function MainLoop() {
     ctx.fillStyle = `Black`
     ctx.font = `${font}px Arial`;
 
-    if (won == false)
+    if (won == false) {
         h1 = "Quickly! You need to call off the strike now!"
-    else
+        ctx.fillText(h1, width / 2 - (ctx.measureText(h1).width / 2) + rumblex,
+                 height / 5 + rumbley);  
+
+        ctx.font = `${font / 2}px Arial`;
+        h1 = "(click or press space to run)"
+        ctx.fillText(h1, width / 2 - (ctx.measureText(h1).width / 2) + rumblex,
+                 height / 4 + rumbley); 
+        ctx.font = `${font}px Arial`; 
+    }
+
+    else {
         h1 = "Unionize that Bitchhhh!!!!"
+        ctx.fillText(h1, width / 2 - (ctx.measureText(h1).width / 2) + rumblex,
+                 height / 5 + rumbley);  
+    }
 
     
-    ctx.fillText(h1, width / 2 - (ctx.measureText(h1).width / 2) + rumblex,
-                 height / 5 + rumbley);  
+    
 
 
     ctx.drawImage(player_image, width / 20 + progress * width, canvas.height / 2, 300, 300 * player_image.height / player_image.width);
